@@ -1,0 +1,2 @@
+# Command for decoding secret from Kubernetes secret
+kubectl get secret kong-enterprise-superuser-password -n kong-hybrid-cp -o jsonpath='{.data}' | jq .password | xargs |base64 -d - | xargs
